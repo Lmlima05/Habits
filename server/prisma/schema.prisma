@@ -1,0 +1,21 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+// Prisma suporta Mongo, Cockroach, SQL
+
+model Habit {
+  id            String @id @default(uuid()) // explicação assim que o hábito for criado no banco de dados, vai preexer o id automaticamente com um uuid(Universally Unique IDentifier)
+  title         String
+  created_at    DateTime
+
+  @@map("habits")
+}
