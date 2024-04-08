@@ -14,9 +14,8 @@ const weekDays = [
 const sumaryDates = generateDatesFromYearBeginning()
 
 const minimumSummaryDatesSize = 18 * 7
-const amountOfDaysToFill = minimumSummaryDatesSize.length
+const amountOfDaysToFill = minimumSummaryDatesSize - sumaryDates.length
 
- 
 export function SummaryTable() {
   return (
     <div className="w-full flex">
