@@ -151,7 +151,7 @@ export async function appRoutes(app: FastifyInstance) {
       FROM days D
     `
     return summary
-  })
+  }) 
 }
 
   
