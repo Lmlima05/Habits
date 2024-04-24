@@ -1,3 +1,5 @@
+import './src/lib/dayjs'
+
 import { StatusBar  } from 'react-native';
 import {
   useFonts,
@@ -27,7 +29,7 @@ export default function App() {
   return (
     <>
       <Routes />
-      <StatusBar barStyle="light-content" backgroundColor="transparent" translucent/>
+      <StatusBar barStyle="light-content" backgroundColor="transparent" translucent />
     </>
   );
 }
