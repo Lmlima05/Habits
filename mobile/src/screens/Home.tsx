@@ -75,23 +75,25 @@ export function Home() {
       >
         {summary && (
           <View className="flex-row flex-wrap">
-            {datesFromYearStart.map((date) => {
-              const dayWithHabits = summary.find((day) => {
-                return dayjs(date).isSame(day.date, "day");
-              });
+            {
+              datesFromYearStart.map(date => {
+                const dayWithHabits = summary.find((day) => {
+                  return dayjs(date).isSame(day.date, "day")
+                });
 
-              return (
-                <HabitDay
-                  date={date}
-                  key={date.toISOString()}
-                  amountOfHabits={dayWithHabits?.amount}
-                  amountCompleted={dayWithHabits?.completed}
-                  onPress={() =>
-                    navigate("habit", { date: date.toISOString() })
-                  }
-                />
-              );
-            })}
+                return (
+                  <HabitDay
+                    key={date.toISOString()}
+                    date={date}
+                    amountOfHabits={dayWithHabits?.amount}
+                    amountCompleted={dayWithHabits?.completed}
+                    onPress={() =>
+                      navigate('habit', { date: date.toISOString() })
+                    }
+                  />
+                )
+              })
+            }
 
             {amountOfDaysToFill > 0 &&
               Array.from({ length: amountOfDaysToFill }).map((_, index) => (
