@@ -7,15 +7,8 @@ export function BackButton() {
   const { goBack } = useNavigation();
 
   return (
-    <TouchableOpacity
-      activeOpacity={0.7}
-      onPress={goBack}
-    >
-      <Feather
-        name="arrow-left"
-        size={32}
-        color={colors.violet[400]}
-      />
+    <TouchableOpacity onPress={goBack} activeOpacity={0.7}>
+      <Feather name="arrow-left" size={32} color={colors.zinc[400]} />
     </TouchableOpacity>
   );
 }
